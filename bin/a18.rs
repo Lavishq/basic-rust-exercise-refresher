@@ -16,4 +16,36 @@
 //   * For the Ok variant, print any message you want
 //   * For the Err variant, print out the error message
 
-fn main() {}
+// cheat for below line, i wrote #derive (Debug)
+#[derive(Debug)]
+struct Adult {
+    name: String,
+    age: u32
+}
+
+impl Adult {
+    fn new(name: &str, age:u32) -> Result<Self, &str> { // i used incorrect Result(Ok(Adult), Err(String))
+        if age >=21 {
+            Ok(Self{name: name.to_owned(), age})
+        } else {
+            Err("Age must be at least 21")
+        }
+    }
+}
+
+fn main() {
+    let adult1 = Adult::new( "Lavishq", 22);
+    let adult2 = Adult::new( "Victor",  14);
+
+    let adults = vec![adult1, adult2];
+
+    for adult in adults {
+        match adult {
+            // i was stuck on how to print since the impl has new, so do i have to create a print as well in impl ... lets peek the soln
+            Ok(adult) => println!("{} is {} years old, testing again after removing a a print", adult.name, adult.age),
+            Err(e) => println!("{e}")
+        }
+    }
+}
+
+// final note... this was diff.. had struct errors, Result errors, argument etc etc but after a lot of effort it was solved in the end
