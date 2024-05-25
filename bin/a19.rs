@@ -23,7 +23,8 @@ fn main() {
     storage.insert("Couch", 0);
 
     let mut sum_of_items = 0;
-
+// i checked the soln after pushed and deleted the repo locally
+// storage.iter() should is used there but both should be fine since my code ran
     for (item, amount) in storage {
         sum_of_items += 0;
         // i used if else but then peeked soln and if let is a better choice... cheated format and println
