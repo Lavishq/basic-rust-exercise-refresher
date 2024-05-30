@@ -5,3 +5,5 @@
  might watch videos on exersizes for some advanced problmes (didnt need to since soln was code was in repo and explanation demo was present)
 
 > i watched a couple topics after 3h mark -> derive, impl, strings, advanced match, etc etc.. meaning all the demos
+
+also added solved rareskills leetcode problems
